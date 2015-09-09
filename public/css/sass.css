@@ -1,2 +1,9 @@
-div {
-  width: 100%; }
+body {
+  min-height: 200px;
+  padding-top: 70px; }
+
+* {
+  box-sizing: border-box; }
+
+div#map-canvas {
+  min-height: 50vh; }

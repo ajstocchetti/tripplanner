@@ -8,16 +8,16 @@ var path = require('path');
 var app = express();
 require('./config/swig.js').config(app);
 
-app.use(sass({
-  root: __dirname,
-  src: '/scss',
-  dest: '/public/css',
-  debug: true
-}))
+// app.use(sass({
+//   root: __dirname,
+//   src: '/scss',
+//   dest: '/public/css',
+//   debug: true
+// }))
 app.use(logger('dev'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
-app.use(express.static(path.join(__dirname, '/public')));
+app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
 var root = require('./routes/root');
