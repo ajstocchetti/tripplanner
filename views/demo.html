@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+  <form class='col-lg-8'>
+    <label for="restaurant">Restaurant</label>
+    <select name="restaurant">
+      {% for r in Restaurants %}
+      <option value="{{r.name}}">{{r.name}}</option>
+      {% endfor %}
+    </select>
+
+    <label for="hotel">Hotel</label>
+    <select name="hotel">
+      {% for h in Hotels %}
+      <option value="{{h.name}}">{{h.name}}</option>
+      {% endfor %}
+    </select>
+
+    <label for="activity">Activity</label>
+    <select name="activity">
+      {% for a in Activities %}
+      <option value="{{a.name}}">{{a.name}}</option>
+      {% endfor %}
+    </select>
+
+    <br>
+    <br>
+    <input id="submit" type="submit">
+  </form>
+</div>
+{% endblock %}

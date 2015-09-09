@@ -18,11 +18,10 @@ app.use(logger('dev'));
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 app.use(express.static(path.join(__dirname, '/public')));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 
-app.get('/', function(req, res) {
-  res.render('layout.html')
-});
-
+var root = require('./routes/root');
+app.use('/', root);
 
 app.listen(3001);
 
